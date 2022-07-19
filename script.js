@@ -12,10 +12,16 @@ function getComputerChoice() {
     return gameAnswers[Math.floor(Math.random()* gameAnswers.length)]
 };
 
+function getPlayerChoice() {
+    return prompt("What's your choice?")
+};
+
 // Variables
 const computerSelection = getComputerChoice();
-const playerSelection = prompt("What's your choice");
+let playerSelection = getPlayerChoice()
 
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper"){
@@ -25,21 +31,12 @@ function playRound(playerSelection, computerSelection){
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "rock") {
         return "It's a Tie!"
     } 
-
 };
 
 function game() {
     for (let i = 0; i < 5; i++) {
-       console.log(playRound(playerSelection, computerSelection));
-    }
+       
+    } 
 }
 
 game();
-
-/*
-
-else {
-    return "This result hasn't been defined"
-}
-
-*/
