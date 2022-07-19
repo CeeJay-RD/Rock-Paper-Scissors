@@ -14,7 +14,7 @@ function getComputerChoice() {
 
 // Variables
 const computerSelection = getComputerChoice();
-const playerSelection = "rock";
+const playerSelection = prompt("What's your choice");
 
 
 function playRound(playerSelection, computerSelection){
@@ -28,7 +28,13 @@ function playRound(playerSelection, computerSelection){
 
 };
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    for (let i = 0; i < 5; i++) {
+       console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
 
 /*
 
