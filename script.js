@@ -16,12 +16,8 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-// Function to get player's choice
-function getPlayerChoice() {
-    return prompt("What's your choice?")
-};
 
-// Selections
+// Selections. Disabled to be used on the loop
 // const computerSelection = getComputerChoice();
 // const playerSelection = getPlayerChoice();
 
@@ -34,10 +30,32 @@ function playRound(playerSelection, computerSelection){
         return "You Lost! Paper beats Rock"
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
         playerScore++
-        return "You Win! Rock beats Scissors"
+        return "You Win! Rock breaks Scissors"
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "rock") {
         return "It's a Tie!"
     } 
+
+    else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock"){
+        playerScore++
+        return "You Won! Paper beats Rock"
+    } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
+        computerScore++
+        return "You Lost! Scissors cut paper"
+    } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "paper") {
+        return "It's a Tie!"
+    } 
+
+    else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper"){
+        playerScore++
+        return "You Won! Scissors cut paper"
+    } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
+        computerScore++
+        return "You Lost! Rock breaks scissors"
+    } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "scissors") {
+        return "It's a Tie!"
+    }
+
+
 
 };
 
