@@ -4,6 +4,7 @@ When a user inputs an option compare with computers selection
 If the user wins, give 1 point to the user
 If the computer wins, give 1 point to the computer
 Loop the round 5 times and print the result of each round with the score
+Once the game's finished, print who's the winner and how many point the winner won with
 
 */
 
@@ -58,6 +59,8 @@ function playRound(playerSelection, computerSelection){
         return "You Lost! Rock breaks scissors"
     } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "scissors") {
         return "It's a Tie!"
+    } else {
+        prompt("That's not a valid answer")
     }
 
 
@@ -73,6 +76,15 @@ function game() {
         console.log("your score = " + playerScore);
         console.log("Computer's score = " + computerScore);
     }
+
+    if(playerScore === 5 && computerScore < 5){
+    console.log("You win the game with" + " " + playerScore + " " + "points")
+    } else if (computerScore === 5 && playerScore < 5) {
+    console.log("The computer won the game with" + " " + computerScore + " " +"points")    
+    } else {
+        console.log("It's a tie!")
+    }
+
 }
 
 
