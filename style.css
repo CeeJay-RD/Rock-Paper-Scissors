@@ -23,3 +23,59 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-white-color);
 }
+
+header {
+    margin: 50px 0;
+    text-align: center;
+
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.score {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+
+    font-size: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-result {
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+
+    background-color: var(--secondary-bg-color);
+    border-radius: 3px;
+
+    padding: 100px;
+    margin: 50px auto;
+}
+
+ 
+.logs {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.player-heading {
+    color: var(--main-teal-color);
+}
+
+.computer-heading {
+    color: var(--main-teal-color);
+}
