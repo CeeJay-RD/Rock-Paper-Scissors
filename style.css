@@ -52,7 +52,7 @@ main {
 
 .btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     max-width: 600px;
 
@@ -63,12 +63,21 @@ main {
     margin: 50px auto;
 }
 
+.btn {
+    border: none;
+    background: none;
+    font-size: 100px;
+    
+
+}
+
  
 .logs {
     display: flex;
     gap: 25px;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
 }
 
