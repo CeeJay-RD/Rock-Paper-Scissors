@@ -1,0 +1,25 @@
+:root {
+    --main-bg-color: #111827;
+    --secondary-bg-color: #1f2937;
+    --main-white-color: #d1d5db;
+    --main-gray-color: #9ca3af;
+    --main-teal-color: #0f766e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+html {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-white-color);
+}
