@@ -4,6 +4,7 @@
     --main-white-color: #d1d5db;
     --main-gray-color: #9ca3af;
     --main-teal-color: #0f766e;
+    --secondary-teal-color: #08433e;
 }
 
 * {
@@ -55,18 +56,30 @@ main {
 
 }
 
+@media screen and (max-width:500px) {
+    .btn-container {
+        flex-direction: column;
+        padding: 35px;
+        gap: 8px;
+    }
+
+    .logs {
+        flex-direction: column;
+    }
+}
+
 .btn-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 600px;
-    min-width: 200px;
+    min-width: 0px;
 
     background-color: var(--secondary-bg-color);
     border-radius: 6px;
 
     padding: 100px;
-    margin: 25px auto 2px auto  ;
+    margin: 25px auto 10px auto  ;
 }
 
 .btn {
@@ -74,7 +87,7 @@ main {
     background: none;
     font-size: 100px;
     color: var(--main-gray-color);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 
 
@@ -83,6 +96,12 @@ main {
 .btn:hover {
     transform: scale(1.1);
     color: var(--main-teal-color);
+    text-shadow: 1px 4px 10px rgba(0,0,0,0.13);
+}
+
+.btn:active {
+    color: var(--secondary-teal-color);
+    transition: all 0.03s ease-in-out;
 }
 
 .logs {
