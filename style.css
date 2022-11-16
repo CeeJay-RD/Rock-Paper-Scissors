@@ -25,11 +25,14 @@ body {
 }
 
 header {
-    margin: 50px 0;
+    margin: 20px 0;
     text-align: center;
 
 }
 
+header h1 {
+    font-size: 4em;
+}
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -40,7 +43,7 @@ main {
     display: flex;
     gap: 8px;
     margin-bottom: 10px;
-
+    color: var(--main-gray-color);
     font-size: 3em;
     justify-content: center;
     align-items: center;
@@ -48,6 +51,8 @@ main {
 
 .round-result {
     text-align: center;
+    margin-bottom: 20px;
+
 }
 
 .btn-container {
@@ -55,23 +60,31 @@ main {
     justify-content: space-between;
     align-items: center;
     max-width: 600px;
+    min-width: 200px;
 
     background-color: var(--secondary-bg-color);
     border-radius: 6px;
 
     padding: 100px;
-    margin: 50px auto;
+    margin: 25px auto 2px auto  ;
 }
 
 .btn {
     border: none;
     background: none;
     font-size: 100px;
-    
+    color: var(--main-gray-color);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
 
 }
 
- 
+.btn:hover {
+    transform: scale(1.1);
+    color: var(--main-teal-color);
+}
+
 .logs {
     display: flex;
     gap: 25px;
@@ -79,7 +92,7 @@ main {
     align-items: center;
     text-align: center;
     background-color: var(--secondary-bg-color);
-    margin: auto;
+    margin: 25px auto;
     padding: 20px;
     max-width: 600px;
     border-radius: 6px;
