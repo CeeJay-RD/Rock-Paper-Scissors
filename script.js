@@ -24,16 +24,33 @@ function getComputerChoice() {
 };
 
 // Scores
-let playerScore = 0;
-let computerScore = 0;
+let playerScore = document.querySelector('.player-score').textContent;
+let computerScore = document.querySelector('.computer-score').textContent;
+let roundResult = document.getElementById('round-result').textContent;
 
+// Button handlers
+
+const rockBtn = document.getElementsByClassName('.rock');
+const paperBtn = document.getElementsByClassName('.paper');
+const scissorsBtn = document.getElementsByClassName('.scissors');
+const buttons = Array.from(document.querySelectorAll('.btn'));
+let playerSelection;
+let computerSelection = getComputerChoice();
+
+
+buttons.forEach(button => button.addEventListener('click', () => {
+
+    playerSelection = button.getAttribute('data-id');
+    console.log(playerSelection);
+
+})); 
 
 function playRound(playerSelection, computerSelection){
 
     // Outputs for when the player chooses rock
     if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper"){
         computerScore++
-        return "You Lost! Paper beats Rock"
+        return roundResult = 'test'
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
         playerScore++
         return "You Win! Rock breaks Scissors"
@@ -68,11 +85,12 @@ function playRound(playerSelection, computerSelection){
 };
 
 //Loop function to play 5 rounds and print the result of each
+
+
 function game() {
     for(let i = 0; i < 5 || playerScore < 5 && computerScore < 5; i++){
-        let playerSelection = prompt("Pick a move");
         let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+        roundResult.textContent = playRound(playerSelection, computerSelection);
         console.log("your score = " + playerScore);
         console.log("Computer's score = " + computerScore);
     }
