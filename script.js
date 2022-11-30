@@ -39,59 +39,51 @@ let computerSelection;
 
 
 buttons.forEach(button => button.addEventListener('click', () => {
-
+       
     playerSelection = button.getAttribute('data-id');
     let computerSelection = getComputerChoice();
-    
-    console.log(playerSelection);
-    console.log(computerSelection);
-
-
-
     playRound(playerSelection, computerSelection);
-
-    
-    console.log(playerScore + "PS");
-    console.log(computerScore + "CS");
-
-
 
 })); 
 
 function playRound(playerSelection, computerSelection){
 
     // Outputs for when the player chooses rock
-    document.querySelector('.computer-score').textContent = computerScore;
-    document.querySelector('.player-score').textContent = playerScore;
     
     if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper"){
         computerScore++
-        return document.getElementById('round-result').textContent = 'You Lost! Paper beats Rock!'
+        document.querySelector('.computer-score').textContent = computerScore;
+        document.getElementById('round-result').textContent = 'You Lost! Paper beats Rock!'
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
         playerScore++
-        return document.getElementById('round-result').textContent = "You Win! Rock breaks Scissors"
+        document.querySelector('.player-score').textContent = playerScore;
+        document.getElementById('round-result').textContent = "You Win! Rock breaks Scissors"
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "rock") {
         return document.getElementById('round-result').textContent = "It's a Tie!"
     } 
     // Output for when the player chooses paper
     else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock"){
         playerScore++
-        return document.getElementById('round-result').textContent = "You Won! Paper beats Rock"
+        document.querySelector('.player-score').textContent = playerScore;
+        document.getElementById('round-result').textContent = "You Won! Paper beats Rock"
     } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors") {
         computerScore++
-        return document.getElementById('round-result').textContent = "You Lost! Scissors cut paper"
+        document.querySelector('.computer-score').textContent = computerScore;
+        document.getElementById('round-result').textContent = "You Lost! Scissors cut paper"
     } else if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "paper") {
-        return document.getElementById('round-result').textContent = "It's a Tie!"
+        document.getElementById('round-result').textContent = "It's a Tie!"
     } 
     // Output for when the player chooses scissors
     else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper"){
         playerScore++
-        return document.getElementById('round-result').textContent = "You Won! Scissors cut paper"
+        document.querySelector('.player-score').textContent = playerScore;
+        document.getElementById('round-result').textContent = "You Won! Scissors cut paper"
     } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock") {
         computerScore++
-        return document.getElementById('round-result').textContent = "You Lost! Rock breaks scissors"
+        document.querySelector('.computer-score').textContent = computerScore;
+        document.getElementById('round-result').textContent = "You Lost! Rock breaks scissors"
     } else if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "scissors") {
-        return document.getElementById('round-result').textContent = "It's a Tie!"
+        document.getElementById('round-result').textContent = "It's a Tie!"
     } else {
         prompt("That's not a valid answer")
     }
