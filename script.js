@@ -37,11 +37,16 @@ const buttons = Array.from(document.querySelectorAll('.btn'));
 let playerSelection;
 let computerSelection;
 
+// Log
+let playerLog = document.querySelector('.player-log');
+let computerLog = document.querySelector('.computer-log');
+
 
 buttons.forEach(button => button.addEventListener('click', () => {
 
     playerSelection = button.getAttribute('data-id');
     let computerSelection = getComputerChoice();
+    selectionLog(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
 
 })); 
@@ -88,6 +93,25 @@ function playRound(playerSelection, computerSelection){
 
 
 
+};
+
+function selectionLog (playerSelection, computerSelection) {
+
+    const logIcon = document.createElement('i');
+
+    if (playerSelection == "rock") {
+
+        logIcon.classList.add('rock', 'log-btn', 'fa-solid', 'fa-hand-fist');
+        playerLog.replaceWith(logIcon);
+
+    } else if (playerSelection == "paper") {
+
+        logIcon.classList.add('paper', 'log-btn', 'fa-solid', 'fa-hand');
+        playerLog.replaceWith(logIcon);
+        
+
+
+    }
 };
 
 //Loop function to play 5 rounds and print the result of each

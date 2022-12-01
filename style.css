@@ -17,8 +17,11 @@
   }
 
 html {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   font-size: 32px;
 }
+
+
 
 body {
     background-color: var(--main-bg-color);
@@ -32,8 +35,8 @@ header {
 }
 
 header h1 {
-    font-size: 4em;
 }
+
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -45,7 +48,7 @@ main {
     gap: 8px;
     margin-bottom: 10px;
     color: var(--main-gray-color);
-    font-size: 3em;
+    font-size: 2rem;
     justify-content: center;
     align-items: center;
 }
@@ -53,20 +56,11 @@ main {
 #round-result {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 0.55rem;
 
 }
 
-@media screen and (max-width:500px) {
-    .btn-container {
-        flex-direction: column;
-        padding: 35px;
-        gap: 8px;
-    }
 
-    .logs {
-        flex-direction: column;
-    }
-}
 
 .btn-container {
     display: flex;
@@ -85,11 +79,34 @@ main {
 .btn {
     border: none;
     background: none;
-    font-size: 100px;
+    font-size: 3rem;
     color: var(--main-gray-color);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 
+
+}
+
+.log-btn {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: var(--main-gray-color);
+
+}
+
+@media screen and (max-width:500px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    .btn-container {
+        padding: 35px;
+        justify-content: center;
+        gap: 75px;
+        margin-bottom: 30px;
+    }
 
 }
 
@@ -106,7 +123,7 @@ main {
 
 .logs {
     display: flex;
-    gap: 25px;
+    gap: 100px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -119,8 +136,10 @@ main {
 
 .player-heading {
     color: var(--main-teal-color);
+    font-size: 2rem;
 }
 
 .computer-heading {
     color: var(--main-teal-color);
+    font-size: 2rem;
 }
