@@ -34,14 +34,19 @@ header {
 
 }
 
-header h1 {
+i {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
 }
+
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
 }
+
 
 .score {
     display: flex;

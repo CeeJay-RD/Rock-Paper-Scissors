@@ -46,19 +46,24 @@ buttons.forEach(button => button.addEventListener('click', () => {
 
     playerSelection = button.getAttribute('data-id');
     let computerSelection = getComputerChoice();
+    clearLog();
     selectionLog(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
+    
+
 
 })); 
 
 function playRound(playerSelection, computerSelection){
 
+    const logIcon = document.createElement('i');
     // Outputs for when the player chooses rock
     
     if (playerSelection == "rock" && computerSelection == "paper"){
         computerScore++
         document.querySelector('.computer-score').textContent = computerScore;
         document.getElementById('round-result').textContent = 'You Lost! Paper beats Rock!'
+        
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
         playerScore++
         document.querySelector('.player-score').textContent = playerScore;
@@ -95,23 +100,34 @@ function playRound(playerSelection, computerSelection){
 
 };
 
+
 function selectionLog (playerSelection, computerSelection) {
-
-    const logIcon = document.createElement('i');
-
+    
     if (playerSelection == "rock") {
-
-        logIcon.classList.add('rock', 'log-btn', 'fa-solid', 'fa-hand-fist');
-        playerLog.replaceWith(logIcon);
-
+        playerLog.classList.add('rock', 'log-btn', 'fa-solid', 'fa-hand-fist');
     } else if (playerSelection == "paper") {
-
-        logIcon.classList.add('paper', 'log-btn', 'fa-solid', 'fa-hand');
-        playerLog.replaceWith(logIcon);
-        
-
-
+        playerLog.classList.add('paper', 'log-btn', 'fa-solid', 'fa-hand');
+    } else if (playerSelection == "scissors") {
+        playerLog.classList.add('scissors', 'log-btn', 'fa-solid', 'fa-hand-scissors');        
     }
+
+    if (computerSelection == "rock") {
+        computerLog.classList.add('rock', 'log-btn', 'fa-solid', 'fa-hand-fist');
+    } else if (computerSelection == "paper") {
+        computerLog.classList.add('paper', 'log-btn', 'fa-solid', 'fa-hand');
+    } else if (computerSelection == "scissors") {
+        computerLog.classList.add('scissors', 'log-btn', 'fa-solid', 'fa-hand-scissors');        
+    }
+
+
+
+};
+
+function clearLog() {
+    playerLog.className = '';
+    playerLog.textContent = '';
+    computerLog.className = '';
+    computerLog.textContent = '';
 };
 
 //Loop function to play 5 rounds and print the result of each
