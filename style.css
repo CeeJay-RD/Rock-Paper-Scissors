@@ -100,20 +100,7 @@ main {
 
 }
 
-@media screen and (max-width:500px) {
 
-    html {
-        font-size: 16px;
-    }
-
-    .btn-container {
-        padding: 35px;
-        justify-content: center;
-        gap: 75px;
-        margin-bottom: 30px;
-    }
-
-}
 
 .btn:hover {
     transform: scale(1.1);
@@ -147,4 +134,23 @@ main {
 .computer-heading {
     color: var(--main-teal-color);
     font-size: 2rem;
+}
+
+@media screen and (max-width:500px) {
+
+    html {
+        font-size: 22px;
+    }
+
+    .btn-container {
+        padding: 80px 35px;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 30px;
+    }
+
+    .logs {
+        padding: 60px 35px;
+    }
+
 }
