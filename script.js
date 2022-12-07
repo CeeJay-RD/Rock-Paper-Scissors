@@ -44,12 +44,17 @@ let computerLog = document.querySelector('.computer-log');
 
 buttons.forEach(button => button.addEventListener('click', () => {
 
+
+
     playerSelection = button.getAttribute('data-id');
     let computerSelection = getComputerChoice();
     clearLog();
     selectionLog(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
-    
+
+    if(isGameOver()) {
+        alert('Game Over!')
+    };
 
 
 })); 
@@ -128,6 +133,11 @@ function clearLog() {
     playerLog.textContent = '';
     computerLog.className = '';
     computerLog.textContent = '';
+};
+
+
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5
 };
 
 //Loop function to play 5 rounds and print the result of each

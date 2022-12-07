@@ -3,6 +3,7 @@
     --secondary-bg-color: #1f2937;
     --main-white-color: #d1d5db;
     --main-gray-color: #9ca3af;
+    --main-gray-color-transparent: rgba(33, 47, 77, 0.568);
     --main-teal-color: #0f766e;
     --secondary-teal-color: #08433e;
 }
@@ -134,6 +135,58 @@ main {
 .computer-heading {
     color: var(--main-teal-color);
     font-size: 2rem;
+}
+
+#endgamemodal {
+    background-color: var(--main-gray-color-transparent);
+
+    padding: 75px;
+    max-width: 600px;
+    border-radius: 8px;
+
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 10;
+
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+
+};
+
+#endgamemodal > h3 {
+
+
+}
+
+#endgamemodal > button {
+
+    border: none;
+    background-color: var(--secondary-bg-color);
+    font-size: 0.4rem;
+    color: var(--main-gray-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+       
+
+}
+
+#endgamemodal > button:hover {
+    background-color: rgb(52, 69, 93);
+
+}
+
+
+
+#endgamemodal > p {
+    font-size: 20px;
+
 }
 
 @media screen and (max-width:500px) {
