@@ -48,6 +48,18 @@ main {
     padding: 10px;
 }
 
+button {
+    border: none;
+    background-color: var(--secondary-bg-color);
+    font-size: 0.4rem;
+    color: var(--main-gray-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+}
+
 
 .score {
     display: flex;
@@ -76,6 +88,7 @@ main {
     min-width: 0px;
 
     background-color: var(--secondary-bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 6px;
 
     padding: 100px;
@@ -114,9 +127,18 @@ main {
     transition: all 0.03s ease-in-out;
 }
 
+.logheaders {
+    display: flex;
+    gap: 100px; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.80rem;
+}
+
 .logs {
     display: flex;
-    gap: 100px;
+    gap: 160px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -124,6 +146,7 @@ main {
     margin: 25px auto;
     padding: 20px;
     max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 6px;
 }
 
@@ -137,7 +160,7 @@ main {
     font-size: 2rem;
 }
 
-#endgamemodalinactive {
+#endgamemodalactive {
     display: block;
 }
 
@@ -165,22 +188,7 @@ main {
 
 
 
-.endgamemodal > button {
-
-    border: none;
-    background-color: var(--secondary-bg-color);
-    font-size: 0.4rem;
-    color: var(--main-gray-color);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 6px;
-    outline: none;
-       
-
-}
-
-.endgamemodal > button:hover {
+#modalbtn:hover {
     background-color: rgb(52, 69, 93);
 
 }

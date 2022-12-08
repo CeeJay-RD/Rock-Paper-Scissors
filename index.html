@@ -28,7 +28,10 @@
             <button class="scissors btn" data-id="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
         </div>
 
-        
+        <div class="logheaders">
+            <p>Player</p>
+            <p>Computer</p>
+        </div>
 
         <div class="logs">
             <div class="player-heading">
@@ -43,9 +46,9 @@
         </div>
 
         <div class="endgamemodal">
-            <h3>Game Result</h3>
-            <p>Round Comment</p>
-            <button>Play Again!</button>
+            <h3 id="modalheader">Game Result</h3>
+            <p id="modaltip">Round Comment</p>
+            <button id="modalbtn" onclick="refreshPage()">Play Again!</button>
         </div>
 
 

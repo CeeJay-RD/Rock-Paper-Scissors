@@ -41,6 +41,11 @@ let computerSelection;
 let playerLog = document.querySelector('.player-log');
 let computerLog = document.querySelector('.computer-log');
 
+//modal
+let modal = document.querySelector('.endgamemodal');
+let modalHeader = document.getElementById('modalheader');
+let modalTip = document.getElementById('modaltip')
+
 
 buttons.forEach(button => button.addEventListener('click', () => {
 
@@ -53,6 +58,7 @@ buttons.forEach(button => button.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     if(isGameOver()) {
         openModal();
+        defineWinner();
     };
 
 
@@ -138,36 +144,25 @@ function clearLog() {
 function isGameOver() {
     return playerScore === 5 || computerScore === 5
 };
-let modal = document.querySelector('.endgamemodal');
 
 function openModal() {
-    modal.setAttribute('id', 'endgamemodalinactive')
-}
+    modal.setAttribute('id', 'endgamemodalactive')
 
+};
 
-//Loop function to play 5 rounds and print the result of each
+function defineWinner() {
+    if (playerScore === 5) {
+        modalHeader.textContent = 'You win!'
+        modalTip.textContent = 'The machine probably wants a rematch'
+    } else if (computerScore === 5) {
+        modalHeader.textContent = 'You Lost!'
+        modalTip.textContent = 'Feel free to try again if you think yo can do better!'
+    }
+};
 
+function refreshPage(){
+    window.location.reload();
+};
 
-
-// function game() {
-//     for(let i = 0; i < 5 || playerScore < 5 && computerScore < 5; i++){
-//         let computerSelection = getComputerChoice();
-//         roundResult.textContent = playRound(playerSelection, computerSelection);
-//         console.log("your score = " + playerScore);
-//         console.log("Computer's score = " + computerScore);
-//     }
-
-//     if(playerScore === 5 && computerScore < 5){
-//     console.log("You win the game with" + " " + playerScore + " " + "points")
-//     } else if (computerScore === 5 && playerScore < 5) {
-//     console.log("The computer won the game with" + " " + computerScore + " " +"points")    
-//     } else {
-//         console.log("It's a tie!")
-//     }
-
-// }
-
-
-// game();
 
 
