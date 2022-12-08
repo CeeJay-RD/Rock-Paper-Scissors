@@ -51,9 +51,8 @@ buttons.forEach(button => button.addEventListener('click', () => {
     clearLog();
     selectionLog(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
-
     if(isGameOver()) {
-        alert('Game Over!')
+        openModal();
     };
 
 
@@ -139,6 +138,12 @@ function clearLog() {
 function isGameOver() {
     return playerScore === 5 || computerScore === 5
 };
+let modal = document.querySelector('.endgamemodal');
+
+function openModal() {
+    modal.setAttribute('id', 'endgamemodalinactive')
+}
+
 
 //Loop function to play 5 rounds and print the result of each
 

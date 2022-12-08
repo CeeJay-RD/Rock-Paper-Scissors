@@ -137,7 +137,12 @@ main {
     font-size: 2rem;
 }
 
-#endgamemodal {
+#endgamemodalinactive {
+    display: block;
+}
+
+.endgamemodal {
+    display: none;
     background-color: var(--main-gray-color-transparent);
 
     padding: 75px;
@@ -147,7 +152,7 @@ main {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: fixed;
     z-index: 10;
 
     backdrop-filter: blur(18px) saturate(180%);
@@ -157,12 +162,10 @@ main {
 
 };
 
-#endgamemodal > h3 {
 
 
-}
 
-#endgamemodal > button {
+.endgamemodal > button {
 
     border: none;
     background-color: var(--secondary-bg-color);
@@ -177,14 +180,14 @@ main {
 
 }
 
-#endgamemodal > button:hover {
+.endgamemodal > button:hover {
     background-color: rgb(52, 69, 93);
 
 }
 
 
 
-#endgamemodal > p {
+.endgamemodal > p {
     font-size: 20px;
 
 }
