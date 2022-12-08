@@ -1,22 +1,9 @@
-/* 
-
-When a user inputs an option compare with computers selection
-If the user wins, give 1 point to the user
-If the computer wins, give 1 point to the computer
-Loop the round 5 times and print the result of each round with the score
-Once the game's finished, print who's the winner and how many point the winner won with
-
-*/
-
-
-
 // Array for random answers
 const gameAnswers = [
     "rock",
     "paper",
     "scissors"
 ];
-
 
 // Fuction to generate a random answer
 function getComputerChoice() {
@@ -29,7 +16,6 @@ let computerScore = document.querySelector('.computer-score').textContent;
 let roundResult = document.getElementById('round-result').textContent;
 
 // Button handlers
-
 const rockBtn = document.getElementsByClassName('.rock');
 const paperBtn = document.getElementsByClassName('.paper');
 const scissorsBtn = document.getElementsByClassName('.scissors');
@@ -41,15 +27,13 @@ let computerSelection;
 let playerLog = document.querySelector('.player-log');
 let computerLog = document.querySelector('.computer-log');
 
-//modal
+// modal
 let modal = document.querySelector('.endgamemodal');
 let modalHeader = document.getElementById('modalheader');
 let modalTip = document.getElementById('modaltip')
 
 
 buttons.forEach(button => button.addEventListener('click', () => {
-
-
 
     playerSelection = button.getAttribute('data-id');
     let computerSelection = getComputerChoice();
@@ -61,14 +45,12 @@ buttons.forEach(button => button.addEventListener('click', () => {
         defineWinner();
     };
 
-
 })); 
 
 function playRound(playerSelection, computerSelection){
 
     const logIcon = document.createElement('i');
-    // Outputs for when the player chooses rock
-    
+
     if (playerSelection == "rock" && computerSelection == "paper"){
         computerScore++
         document.querySelector('.computer-score').textContent = computerScore;
@@ -79,7 +61,7 @@ function playRound(playerSelection, computerSelection){
         document.querySelector('.player-score').textContent = playerScore;
         document.getElementById('round-result').textContent = "You Win! Rock breaks Scissors"
     } 
-    // Output for when the player chooses paper
+
     else if (playerSelection == "paper" && computerSelection == "rock"){
         playerScore++
         document.querySelector('.player-score').textContent = playerScore;
@@ -89,7 +71,7 @@ function playRound(playerSelection, computerSelection){
         document.querySelector('.computer-score').textContent = computerScore;
         document.getElementById('round-result').textContent = "You Lost! Scissors cut paper"
     } 
-    // Output for when the player chooses scissors
+
     else if (playerSelection == "scissors" && computerSelection == "paper"){
         playerScore++
         document.querySelector('.player-score').textContent = playerScore;
@@ -105,9 +87,6 @@ function playRound(playerSelection, computerSelection){
     } else {
         document.getElementById('round-result').textContent = "ERROR"
     }
-
-
-
 };
 
 
@@ -128,9 +107,6 @@ function selectionLog (playerSelection, computerSelection) {
     } else if (computerSelection == "scissors") {
         computerLog.classList.add('scissors', 'log-btn', 'fa-solid', 'fa-hand-scissors');        
     }
-
-
-
 };
 
 function clearLog() {
@@ -140,14 +116,12 @@ function clearLog() {
     computerLog.textContent = '';
 };
 
-
 function isGameOver() {
     return playerScore === 5 || computerScore === 5
 };
 
 function openModal() {
     modal.setAttribute('id', 'endgamemodalactive')
-
 };
 
 function defineWinner() {
@@ -163,6 +137,3 @@ function defineWinner() {
 function refreshPage(){
     window.location.reload();
 };
-
-
-
