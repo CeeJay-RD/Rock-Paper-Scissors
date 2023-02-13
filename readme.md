@@ -15,7 +15,7 @@ In this project I've created a rock, paper scissors using prompt and the console
 * Once the game's finished, print who's the winner and how many point the winner won with
 ## Roadmap
 
-~~- Add a responsive UI ~~
+~~Add a responsive UI~~
 
 
 ![Alt Text](https://media.giphy.com/media/ZNo3OCM9CoEVz71ilQ/giphy.gif)
